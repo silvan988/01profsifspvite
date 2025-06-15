@@ -6,7 +6,7 @@
 
 .formulario form {
     flex-grow: 1;
-    max-width: 80%;
+    max-width: 40%;
     background-color: #F2F2F2;
     border-radius: 20px;
     padding: 26px 64px;
