@@ -6,20 +6,12 @@ import Botao from "../Botao/Botao";
 
 const Formulario = (props) => {
 
-    const areas = [
-        'Progr. Básica',
-        'Progr. Web',
-        'Banco de Dados',
-        'Tec. Informação',
-        'Diversos'
-    ]
-    
     // Criando os estados...
     const [nome, setNome] = useState('')
     const [titulo, setTitulo] = useState('')
     const [imagem, setImagem] = useState('')
     const [area, setArea] = useState('Progr. Básica')
-    
+
     const aoSalvar = (evento) => {
         evento.preventDefault()
         props.aoProfCadastrado(
@@ -30,6 +22,10 @@ const Formulario = (props) => {
                 "area": area
             }
         );
+        setNome('');
+        setTitulo('');
+        setImagem('');
+        setArea('');
     }
 
     return (
@@ -57,7 +53,7 @@ const Formulario = (props) => {
                 />
                 <ListaSuspensa
                     label="Áreas"
-                    itens={areas}
+                    itens={props.areas}
                     aoAlterado={valor => setArea(valor)}
                 />
                 <Botao>Criar Professor</Botao>
